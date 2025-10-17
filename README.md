@@ -2,7 +2,7 @@
 
 A modern, responsive Jekyll site for The Debuggers (ISc. BHU Coding Club). This repository contains a Jekyll site located in the `debuggersBlog-jekyll/` subfolder and is configured for GitHub Pages.
 
-- Live site: `https://rajsriv.github.io/debuggersBlog-jekyll/`
+- Live site: `https://The-Debuggers-Club.github.io/debuggersBlog-jekyll/`
 - Source folder: `./debuggersBlog-jekyll`
 
 ## Features
