@@ -2,8 +2,8 @@
 title: "The Debuggers"
 tagline: "Code. Debug. Innovate. Together."
 description: "The premier coding club at Institute of Science, Banaras Hindu University"
-url: "https://your-domain.com"
-baseurl: ""
+url: "https://rajsriv.github.io"
+baseurl: "/debuggersBlog-jekyll"
 
 # Author settings
 author:
