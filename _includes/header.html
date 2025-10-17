@@ -1,0 +1,45 @@
+<!-- Header -->
+<div class="header-container">
+    <p class="tagline">{{ site.tagline }}</p>
+    <h1 class="site-title">{{ site.title }}</h1>
+</div>
+
+<!-- Navigation -->
+<nav>
+    <ul class="nav-links">
+        {% for item in site.navigation %}
+        <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+    </ul>
+    <div class="social-search">
+        <a href="#" class="social-icon">🔍</a>
+        <a href="{{ site.social.facebook }}" class="social-icon">f</a>
+        <a href="{{ site.social.instagram }}" class="social-icon">📷</a>
+        <a href="{{ site.social.twitter }}" class="social-icon">🐦</a>
+        <a href="{{ site.social.linkedin }}" class="social-icon">📌</a>
+    </div>
+</nav>
+
+<!-- Hamburger Menu -->
+<div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+        <ul class="mobile-nav-links">
+            {% for item in site.navigation %}
+            <li><a href="{{ item.url | relative_url }}" {% if page.url == item.url %}class="active"{% endif %}>{{ item.title }}</a></li>
+            {% endfor %}
+        </ul>
+        <div class="mobile-social">
+            <a href="{{ site.social.instagram }}" class="social-icon">📷 Instagram</a>
+        </div>
+    </div>
+</div>
+
+<!-- Mobile Overlay -->
+<div class="mobile-overlay" id="mobileOverlay"></div>

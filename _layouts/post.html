@@ -1,0 +1,52 @@
+---
+layout: default
+---
+
+<article class="post">
+    <!-- Post Header -->
+    <header class="post-header">
+        <div class="container">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.author %}
+                <span class="post-author">by {{ page.author }}</span>
+                {% endif %}
+                {% if page.categories %}
+                <span class="post-categories">
+                    {% for category in page.categories %}
+                    <span class="category">{{ category }}</span>
+                    {% endfor %}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <div class="post-content">
+        <div class="container">
+            {{ content }}
+        </div>
+    </div>
+
+    <!-- Post Footer -->
+    <footer class="post-footer">
+        <div class="container">
+            <div class="post-navigation">
+                {% if page.previous.url %}
+                <a href="{{ page.previous.url | relative_url }}" class="prev-post">
+                    ← {{ page.previous.title }}
+                </a>
+                {% endif %}
+                {% if page.next.url %}
+                <a href="{{ page.next.url | relative_url }}" class="next-post">
+                    {{ page.next.title }} →
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </footer>
+</article>

@@ -1,0 +1,92 @@
+# Site settings
+title: "The Debuggers"
+tagline: "Code. Debug. Innovate. Together."
+description: "The premier coding club at Institute of Science, Banaras Hindu University"
+url: "https://your-domain.com"
+baseurl: ""
+
+# Author settings
+author:
+  name: "The Debuggers"
+  email: "contact@debuggersbhu.com"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:year/:month/:day/:title/
+timezone: Asia/Kolkata
+
+# Collections
+collections:
+  events:
+    output: true
+    permalink: /:collection/:name/
+
+# Default layouts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+  - scope:
+      path: ""
+      type: "events"
+    values:
+      layout: "event"
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Include in processing
+include:
+  - _pages
+
+# Social media links
+social:
+  instagram: "#"
+  facebook: "#"
+  twitter: "#"
+  linkedin: "#"
+  github: "#"
+
+# Navigation
+navigation:
+  - title: "Home"
+    url: "/"
+  - title: "About"
+    url: "/about"
+  - title: "Events"
+    url: "/events"
+  - title: "Contact"
+    url: "/contact"
+
+# Featured Post
+featured_post:
+  title: "Workshop 2025: Linux and Open Source"
+  date: "March 15-17, 2025"
+  status: "Registration Closed"
+  excerpt: "Join us for the biggest workshop at BHU! Team up with fellow coders, build innovative projects, and compete for certification. Whether you're into web development, AI/ML, or mobile apps, there's a track for everyone. Free food, swag, and mentorship included!"
+  cta: "Registrations Closed"
+  url: "/events"
+
+# About Text
+about_text: "We are the premier coding club at Institute of Science, Banaras Hindu University. Founded by passionate computer science students, we aim to foster a collaborative learning environment where students can enhance their programming skills, work on innovative projects, and prepare for tech careers. Join us to be part of a vibrant community of coders!"

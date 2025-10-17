@@ -1,0 +1,95 @@
+---
+layout: default
+---
+
+<!-- Featured Post Section -->
+<section class="featured-section">
+    <div class="featured-label">Featured Post</div>
+    <div class="featured-content">
+        <div class="featured-image">
+            <div class="book-placeholder">
+                <div class="book-pages"></div>
+            </div>
+        </div>
+        <div class="featured-text">
+            <h2>{{ site.featured_post.title }}</h2>
+            <div class="meta">{{ site.featured_post.date }} • {{ site.featured_post.status }}</div>
+            <p>{{ site.featured_post.excerpt }}</p>
+            <a href="{{ site.featured_post.url | relative_url }}" class="read-more">{{ site.featured_post.cta }} →</a>
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="newsletter-content">
+        <h2>Stay Updated with Club Activities.</h2>
+        <div class="newsletter-form">
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="email">Enter your email *</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email *" required>
+                    <button type="submit">Subscribe</button>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter" required>
+                    <label for="newsletter">Yes, subscribe me to club updates and events. *</label>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content Area -->
+<section class="main-content">
+    <div class="content-wrapper">
+        <!-- Blog Posts List -->
+        <div class="blog-list">
+            <h2 class="section-heading">RECENT EVENTS & UPDATES</h2>
+            
+            {% for post in site.posts limit:3 %}
+            <article class="blog-post-card">
+                <div class="post-image-wrapper">
+                    {% if post.image %}
+                    <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" class="blog-post-img">
+                    {% else %}
+                    <div class="blog-post-img" style="background: {{ post.gradient | default: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)' }};"></div>
+                    {% endif %}
+                </div>
+                <div class="post-details">
+                    <div class="post-date">{{ post.date | date: "%b %d, %Y" }} • {{ post.category | default: "Event" }}</div>
+                    <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+                    <p>{{ post.excerpt | default: post.content | strip_html | truncate: 150 }}</p>
+                    <div class="post-stats">
+                        <span>{{ post.attendees | default: "0" }} attendees</span>
+                        <span>{{ post.comments | default: "0" }} comments</span>
+                        <button class="like-btn">{{ post.likes | default: "0" }} ❤️</button>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <!-- About Me Section -->
+            <div class="about-section">
+                <h2 class="section-heading">ABOUT THE DEBUGGERS</h2>
+                <div class="about-image">
+                    <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem; font-weight: bold;">&lt;/&gt;</div>
+                </div>
+                <p>{{ site.about_text | default: "We are the premier coding club at Institute of Science, Banaras Hindu University. Founded by passionate computer science students, we aim to foster a collaborative learning environment where students can enhance their programming skills, work on innovative projects, and prepare for tech careers. Join us to be part of a vibrant community of coders!" }}</p>
+                <a href="{{ '/about' | relative_url }}" class="read-more-link">Learn More ></a>
+            </div>
+
+            <!-- Follow Me Section -->
+            <div class="follow-section">
+                <h2 class="section-heading">CONNECT WITH US</h2>
+                <div class="social-gallery">
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border: 1px solid #000;"></div>
+                    <div style="width: 100%; height: 200px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); border: 1px solid #000;"></div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</section>
